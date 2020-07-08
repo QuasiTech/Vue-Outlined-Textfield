@@ -1,22 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <v-outlined-textfield v-model="myData"></v-outlined-textfield>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import vOutlinedTextfield from '@/components/OutlinedTextfield.vue';
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      myData: 'Test Data'
+    }
+  },
   components: {
-    HelloWorld
+    vOutlinedTextfield
   }
 }
 </script>
 
 <style>
+body {
+  background-color: #fff;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +33,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color: inherit;
+}
+
+.container {
+  background-color: inherit;
+  width: 400px;
+  margin: 0 auto;
 }
 </style>
